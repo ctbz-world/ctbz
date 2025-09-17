@@ -5,6 +5,8 @@ import react from "@astrojs/react";
 
 import tailwindcss from "@tailwindcss/vite";
 
+import netlify from "@astrojs/netlify";
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
@@ -14,4 +16,6 @@ export default defineConfig({
     // For a stricter type-safe version, add 'vite' as a devDependency and cast to import('vite').PluginOption.
     plugins: [/** @type {import('vite').PluginOption} */ (tailwindcss())],
   },
+
+  adapter: netlify(),
 });
